@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo.svg" alt="tracklistify" width="200">
+  <img src="logo.svg" alt="tracklistify" width="201">
 </p>
 
 # tracklistify
