@@ -1,4 +1,8 @@
-# MixesDB Sync
+<p align="center">
+  <img src="logo.svg" alt="tracklistify" width="200">
+</p>
+
+# tracklistify
 
 Sync DJ set tracklists from [MixesDB](https://www.mixesdb.com) to Spotify playlists.
 
