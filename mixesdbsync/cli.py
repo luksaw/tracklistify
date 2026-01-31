@@ -10,12 +10,35 @@ from mixesdbsync.config import load_config
 from mixesdbsync.matcher import MatchConfidence
 from mixesdbsync.sync import SyncEngine
 
+LOGO = """
+[cyan]  ╭─╮   ╭╮  ╭─╮   ╭╮  ╭─╮   ╭─╮[/cyan]
+[cyan]  │ ╰─╮╭╯╰╮╭╯ ╰─╮╭╯╰╮╭╯ ╰─╮╭╯ │[/cyan]
+[cyan]──╯   ╰╯  ╰╯    ╰╯  ╰╯    ╰╯  ╰──[/cyan]
+[dim]      │      │      │[/dim]
+[dim]      │      │      │[/dim]
+[bold white]      t r a c k l i s t i f y[/bold white]
+"""
+
 app = typer.Typer(
     name="mixesdbsync",
     help="Sync DJ set tracklists from MixesDB to Spotify playlists.",
-    no_args_is_help=True,
 )
 console = Console()
+
+
+def show_logo() -> None:
+    """Display the tracklistify logo."""
+    console.print(LOGO)
+
+
+@app.callback(invoke_without_command=True)
+def main(ctx: typer.Context) -> None:
+    """Sync DJ set tracklists from MixesDB to Spotify playlists."""
+    show_logo()
+    if ctx.invoked_subcommand is None:
+        console.print("[dim]MixesDB → Spotify playlist sync[/dim]")
+        console.print()
+        raise typer.Exit()
 
 
 def confidence_color(confidence: MatchConfidence) -> str:
