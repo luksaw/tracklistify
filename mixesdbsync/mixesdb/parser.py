@@ -22,7 +22,7 @@ class TracklistParser:
     TRACK_PATTERN = re.compile(
         r"^\#\s*"  # Numbered list marker
         r"(?:\[(\d+)\])?\s*"  # Optional timestamp [MM]
-        r"(.+?)\s+-\s+"  # Artist name (non-greedy, followed by " - ")
+        r"(.+?)\s+[-–]\s+"  # Artist name (non-greedy, followed by " - " or " – ")
         r"(.+?)"  # Track title (non-greedy)
         r"(?:\s*\[([^\]]+)\])?\s*$"  # Optional label [Label]
     )
